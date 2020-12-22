@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block head %} 
+<title>Edit a task</title>
+{% endblock %}
+
+{% block body %} 
+<div class="container">
+
+    <h1 class="mb-3">Update task</h1>
+
+    <form class="mb-4" action="/edit/{{ task.id }}" method="POST">
+        <div class="col-auto">
+            <input class="form-control" type="text" name="content" id="content" value="{{ task.content }}">
+        </div>
+        <div class="col-auto d-grid">
+            <input class="btn btn-block btn-success btn-block mt-2" type="submit" value="Change">
+        </div>
+    </form>
+
+
+</div>
+{% endblock %}
