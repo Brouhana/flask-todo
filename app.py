@@ -112,4 +112,4 @@ def follow_up_index():
     return render_template('follow-up.html', tasks=tasks)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
