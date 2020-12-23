@@ -5,8 +5,6 @@
 {% endblock %}
 
 {% block body %} 
-<div class="container">
-
     <h1 class="mb-3">Update task</h1>
 
     <form class="mb-4" action="/edit/{{ task.id }}" method="POST">
@@ -17,7 +15,4 @@
             <input class="btn btn-block btn-success btn-block mt-2" type="submit" value="Change">
         </div>
     </form>
-
-
-</div>
 {% endblock %}

@@ -1,0 +1,31 @@
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Task</th>
+                <th scope="col">Added</th>
+                <th scope="col" width="400px"></th>
+            </tr>
+        </thead>
+        {% for task in tasks %}
+        <tr class="align-baseline {{ 'table-warning' if task.is_important }}">
+            <td>
+                {% if task.is_important %}
+                <span class="badge rounded-pill bg-warning text-dark">Important</span>
+                {% endif %}
+                {% if task.is_follow_up %}
+                <span class="badge rounded-pill bg-info text-dark">Follow Up</span>
+                {% endif %}
+                {{ task.content }}
+            </td>
+            <td>{{ task.date_created.date() }}</td>
+            <td>
+                <a href="/complete/{{ task.id }}" class="btn btn-success btn-sm">Complete</a> 
+                <a href="/follow-up/{{ task.id }}" class="btn btn-secondary btn-sm">Follow Up</a> 
+                <a href="/important/{{ task.id }}" class="btn btn-warning btn-sm">
+                    {{ 'Unmark' if task.is_important else 'Mark' }} as important
+                </a> 
+                <a href="/edit/{{ task.id }}" class="btn btn-link btn-sm">Edit</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>

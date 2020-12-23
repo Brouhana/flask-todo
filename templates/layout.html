@@ -14,6 +14,16 @@
             <a class="navbar-brand" href="/">Todo</a>
         </div>
     </nav>
+    <div class="container">
+    <div class="card mb-4">
+        <div class="card-body">
+            <span class="text-muted d-inline-block">Filter: </span>
+            <a href="/"><span class="badge rounded-pill bg-light text-dark">Uncategorized</span></a> 
+            <a href="/tag/follow-up"><span class="badge rounded-pill bg-info text-dark">Follow Up</span></a> 
+            <a href="/tag/important"><span class="badge rounded-pill bg-warning text-dark">Important</span></a> 
+        </div>
+    </div>
     {% block body %} {% endblock %}
+    </div>
 </body>
 </html>
